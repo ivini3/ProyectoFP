@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/signin.css">
+
+
+        
+        </script>
+        
+</head>
+
+<body>
+    <header>
+        <a href="/" text-decoration="none"><img src="/images/Logo.png" alt="Logo" id="logocabecera"></a>
+        <span id="nombretiendaheader">Ivastock´s</span>
+        <div class="language-select-container">
+            <select id="language-select" class="language-select">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+
+            </select>
+        </div>
+        <div id="social-icons">
+
+            <a href="#" id="social-icon"><img src="/images/twittericon.png" alt="Twitter"></a>
+            <a href="#" id="social-icon"><img src="/images/facebookicon.png" alt="Facebook"></a>
+            <a href="#" id="social-icon"><img src="/images/instagramicon.png" alt="Instagram"></a>
+        </div>
+    </header>
+    <div id="contenedor-formulario">
+        
+    <div id="formulario">
+        <div id="contenedor-logo"><img src="/images/Logo.png" alt="Logo" id="logo"><span id="nombrelogo">Ivastock´s</span></div>
+
+        <form th:action="@{/login}" method="post">
+            <label>Usuario
+        <input type="text" name="username"/><br/></label>
+        <label >Contraseña
+        <input type="password" name="password"/><br/></label>
+        <div id="opciones-aparte">
+            <label class="checkbox-container">
+                <input type='checkbox' name='remember-me'/>
+                Recuérdame
+            </label>
+            <a href="#">Registrarse</a>
+        </div>
+        <div th:if="${param.error}" class="incorrecto">Credenciales incorrectas</div>
+        <div th:if="${param.logout}" class="incorrecto">Te has desconectado</div>
+        <input type="submit" value="Iniciar Sesion" id="botonenviar"/>
+        
+        
+    </form>
+    <div>
+    </div>
+
+</body>
+
+</html>

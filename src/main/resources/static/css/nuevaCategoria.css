@@ -1,0 +1,165 @@
+@font-face{
+    font-family:Inter;
+    src: url(/css/fonts/Inter-Medium.ttf);    
+}
+/* Reset básico para estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    background-color: #0475ff1d;
+    font-family: Inter;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+header {
+    z-index: 99;
+    background: #333; /* Cambiar por el color deseado */
+    height: 40px;  
+    position: fixed;
+    width: 100%;
+    
+}
+#logocabecera{
+    width: 2.5%;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+}
+#nombretiendaheader{
+font-family:Inter;
+font-size: 15px;
+color: white;
+position: absolute;
+top: 12px;
+left: 55px;
+}
+.language-select-container {
+    position: absolute;
+    right: 150px; /* Ajusta según tu diseño y la posición de los iconos de redes sociales */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.language-select {
+    background-color: #333; /* Color de fondo para que coincida con el header */
+    color: white; /* Color del texto */
+    border: none;/* Color del borde */
+    padding: 5px 10px 5px 10px; /* Padding para texto y espacio para la flecha */
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+/* Bordes redondeados */
+    cursor: pointer;
+}
+
+.language-select:focus {
+    outline: none; /* Elimina el contorno al enfocar */
+}
+
+/* Estilos para los iconos de redes sociales */
+#social-icons {
+    position: absolute;
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+#social-icons #social-icon {
+    display: inline-block;
+    margin-left: 10px; /* Espacio entre íconos */
+}
+
+#social-icons #social-icon img {
+    height: 26px; 
+    vertical-align: middle; 
+}
+/* Añade estilos para :hover para los iconos de redes sociales si es necesario */
+#social-icons #social-icon:hover {
+    /* Estilos para el estado hover, por ejemplo: */
+    opacity: 0.7;
+}
+
+/* Estilos para el contenedor del formulario */
+#contenedor-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 100vh; /* Esto hará que el contenedor tome toda la altura de la vista */
+}
+#logo{
+    width: 60px;
+    height: 50px;
+    vertical-align: middle;
+}
+#nombrelogo{
+    margin-top: 4px;
+    vertical-align: middle;
+    font-size: 25px;
+  
+    font-family: Inter;
+}
+#logo, #nombrelogo {
+    display: inline;
+     /* Opcional: para alinear verticalmente con respecto a la línea base */
+}
+.contenedor-logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el formulario */
+#formulario {
+    margin-top: 30px;
+    width: 70%; /* Ajusta esto según prefieras */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: white; /* Color de fondo azul clarito */
+    border: 2px solid black; /* Borde azul clarito */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 8px 15px rgb(0, 0, 0);
+    height: 80vh;
+}
+
+label{
+    margin-top: 150px;
+}
+
+
+/* Estilizar los elementos del formulario usando sus IDs */
+ #nombre {
+    width: 100%; /* Ajusta el ancho de los inputs */
+    padding: 7px;
+    margin-top: 15px;
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde sutil */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho final */
+}
+
+/* Estilos específicos para el botón de envío */
+#botonenviar{
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color de texto */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+#botonenviar:hover, #borrar-imagen:hover {
+    background-color: #45a049; /* Cambia el color al pasar el mouse */
+}
+
+/* Ajustes para el área de texto y la etiqueta del archivo, ya con IDs asignados */
+
+
+

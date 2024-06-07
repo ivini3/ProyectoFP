@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/productos.css">
+    <!-- <script>
+        function changeCategory(){
+        window.location.href = "/productos/"+
+        document.getElementById("select").value;
+        }
+        </script> -->
+        <script>
+            function changeCategory(){
+            const select = document.getElementById("select");
+            if (select.value == 0) window.location.href = "/";
+            else window.location.href = "/"+select.value; 
+            }
+      
+            </script>
+               
+</head>
+
+<body>
+  <header>
+    <a href="/" text-decoration="none"><img src="/images/Logo.png" alt="Logo" id="logocabecera"></a>
+    <span id="nombretiendaheader">Ivastock´s</span>
+    <div class="language-select-container">
+        <select id="language-select" class="language-select">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+
+        </select>
+    </div>
+    <div id="social-icons">
+
+        <a href="#" id="social-icon"><img src="/images/twittericon.png" alt="Twitter"></a>
+        <a href="#" id="social-icon"><img src="/images/facebookicon.png" alt="Facebook"></a>
+        <a href="#" id="social-icon"><img src="/images/instagramicon.png" alt="Instagram"></a>
+    </div>
+</header>
+    <h2>Categoría: <span th:text="${categoriaSeleccionada.nombre}">default</h2>
+    <span class="filtrar">Filtrar Por</span>
+        <select id="select" onChange="changeCategory();">
+            <option value="0">Todas</option>
+            <option th:each="cat : ${listaCategorias}"
+            th:value="${cat.id}" th:text="${cat.nombre}"
+            
+            th:selected="${cat.id} == ${categoriaSeleccionada.id} ? true : false">
+            
+            </option>
+            </select>
+           
+    <table>
+        <th colspan="9">Productos</th>
+       
+          <thead>
+            <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Nombre Categoria</th>
+            <th>Valoraciones</th>
+            <th>Funciones</th>
+          </tr>
+          </thead>
+          <tbody>
+        <tr th:each="producto: ${todoslosproductos}">
+            <td  th:text="${producto.id}"></td>
+            <td  th:text="${producto.nombre}"></td>
+            <td  th:text="${producto.categoria.nombre}"></td>
+            <td><a th:href="@{/valoracion/pro/{id}(id=${producto.id})}">Valoracion</a></td>
+            <td ><a th:href="@{/borrarProducto/{id}(id=${producto.id})}">Borrar Producto</a>
+        
+            <a th:href="@{/editarProducto/{id}(id=${producto.id})}">Editar Producto</a></td>
+            
+        </tr>
+       
+      </tbody>
+    </table>
+    <div class="boton-imagen">
+      <a th:href="@{/nuevoProducto}">
+          <img src="/images/mas.png" alt="Icono de Nuevo Producto" />
+          Añadir Producto
+      </a>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+@font-face{
+    font-family:Inter;
+    src: url(/css/fonts/Inter-Medium.ttf);    
+}
+/* Reset básico para estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    background-color: #0475ff1d;
+    font-family: Inter;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+header {
+    z-index: 99;
+    background: #333; /* Cambiar por el color deseado */
+    height: 40px;  
+    position: fixed;
+    width: 100%;
+    
+}
+#logocabecera{
+    width: 2.5%;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+}
+#nombretiendaheader{
+font-family:Inter;
+font-size: 15px;
+color: white;
+position: absolute;
+top: 12px;
+left: 55px;
+}
+.language-select-container {
+    position: absolute;
+    right: 150px; /* Ajusta según tu diseño y la posición de los iconos de redes sociales */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.language-select {
+    background-color: #333; /* Color de fondo para que coincida con el header */
+    color: white; /* Color del texto */
+    border: none;/* Color del borde */
+    padding: 5px 10px 5px 10px; /* Padding para texto y espacio para la flecha */
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+/* Bordes redondeados */
+    cursor: pointer;
+}
+
+.language-select:focus {
+    outline: none; /* Elimina el contorno al enfocar */
+}
+
+/* Estilos para los iconos de redes sociales */
+#social-icons {
+    position: absolute;
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+#social-icons #social-icon {
+    display: inline-block;
+    margin-left: 10px; /* Espacio entre íconos */
+}
+
+#social-icons #social-icon img {
+    height: 26px; 
+    vertical-align: middle; 
+}
+/* Añade estilos para :hover para los iconos de redes sociales si es necesario */
+#social-icons #social-icon:hover {
+    /* Estilos para el estado hover, por ejemplo: */
+    opacity: 0.7;
+}
+
+#contenedor-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh; /* Asegura que el formulario se centre verticalmente en la pantalla */
+    box-shadow: 0px 8px 15px rgb(0, 0, 0);
+}
+
+/* Estilos para el formulario */
+#formulario {
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    padding: 40px;
+    border-radius: 8px; /* Bordes redondeados */
+    width: 600px; /* Ajusta el ancho automáticamente */
+    height: 80%;
+    box-shadow: 0px 8px 15px rgb(0, 0, 0);
+}
+
+/* Estilos para los inputs */
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px); /* Calcula el ancho para tener en cuenta el padding */
+    padding: 10px;
+    margin-top: 10px; /* Espacio entre inputs */
+    margin-bottom: 10px; /* Espacio debajo de los inputs */
+    border-radius: 5px; /* Bordes redondeados para los inputs */
+    border: 1px solid #ccc; /* Borde sutil */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+}
+
+/* Estilos para el botón de envío */
+#botonenviar {
+    margin-top: 50px; /* Espacio debajo de los inputs */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    padding: 10px;
+    background-color: #008cba; /* Color de fondo más moderno */
+    color: white; /* Texto blanco para contrastar con el fondo */
+    border-radius: 5px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+    font-size: 18px; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+}
+
+#botonenviar:hover {
+    background-color: #007ba7; /* Oscurece el botón al pasar el mouse */
+}
+
+/* Estilos para el contenedor del logo */
+#contenedor-logo {
+    display: flex;
+    justify-content: center; /* Centra el logo y el nombre en el formulario */
+    align-items: center;
+    margin-bottom: 40px; /* Espacio debajo del logo */
+}
+
+#logo {
+    width: 70px; /* Tamaño específico para el logo */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-right: 10px; /* Espacio a la derecha del logo */
+}
+
+#nombrelogo {
+    font-size: 30px; /* Tamaño de fuente más grande para el nombre */
+    color: #333; /* Color oscuro para el texto */
+}
+
+
+#opciones-aparte {
+    display: flex;
+    justify-content: start; /* Cambiado de 'space-between' a 'start' para no separar los elementos */
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* Estilo para el contenedor del checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center; /* Alinea el checkbox y el texto verticalmente */
+    margin-right: 20px; /* Espacio entre el checkbox y el enlace "Registrarse" */
+}
+
+/* Estilo para el enlace "Registrarse" */
+#opciones-aparte a {
+    color: #008cba;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: auto; 
+    padding-right: 25px;/* Alinea el enlace "Registrarse" a la derecha */
+}
+
+#opciones-aparte a:hover {
+    text-decoration: underline;
+}
+.incorrecto{
+    color: red;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" method="post" th:action="@{/producto/editar/submit}" th:object="${productoForm}">
+        <label>Categoria
+            <select name="categoria" th:field="*{categoria}">
+            <option th:each="cat : ${listaCategorias}"
+            th:value="${cat.id}" th:text="${cat.nombre}">
+            </option>
+            </select>
+            </label><br/>
+        <label>Id:<input type="text" readonly id="id" th:field="*{id}" /> </label><br/>
+    <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
+        <label>Marca la casilla si el producto esta en oferta <input type="checkbox" th:field="*{enOferta}"></label>
+        <br>
+        <label><strong>Indica el tipo de IVA: </strong><br>
+            <div th:each="tipoiva : ${T(com.example.myapp.domain.TipoIva).values()}">
+                <input type="radio" name="button1" th:value="${tipoiva}" th:text="${tipoiva}"
+                th:field="*{tipoIva}" />
+        </div>
+        </label>
+        <label>Precio <input type="text" th:field="*{precio}"></label>
+        <br>
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>

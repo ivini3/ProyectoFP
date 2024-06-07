@@ -1,0 +1,26 @@
+
+  /* estilos de carusel  */ 
+
+  /* Carousel base class */
+  .carousel {
+    margin-top:60px;
+    margin-bottom: 4rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    margin-top: -500px;
+    bottom: 4rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 32rem;
+  }
+.carousel-indicators{
+   top: 88%;
+}
+.carousel-background {
+  z-index: -1;
+  position: relative; /* Asegura que z-index tenga efecto */
+}

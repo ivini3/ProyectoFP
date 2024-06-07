@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cssError {
+        background-color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Editar contraseña</h1>
+    <form
+      method="post"
+      action="#"
+      th:action="@{/edit/passLogued/submit}"
+      th:object="${usuarioForm}"
+    >
+    <label>Nueva Contraseña: <input type="password" id="password" th:field="*{contraseña}" /></label><br />
+      <br />
+      <input type="submit" value="Enviar" />
+    </form>
+    <a th:href="@{/public/}">Inicio</a><br />
+  </body>
+</html>

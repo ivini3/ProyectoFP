@@ -1,0 +1,1185 @@
+        @font-face{
+            font-family:Inter;
+            src: url(/css/fonts/Inter-Medium.ttf);    
+        }
+        /* Reset básico para estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Evita desbordamiento horizontal */
+        }
+   
+            /* Tus estilos para pantallas con una anchura de hasta 1600px */
+        
+        /*HEADER*/
+        /* Estilos para el encabezado */
+        header {
+            z-index: 99;
+            background: #333; /* Cambiar por el color deseado */
+            height: 40px;  
+            position: fixed;
+            width: 100%;
+            
+        }
+        #logocabecera{
+            width: 2.5%;
+            position: absolute;
+            top: 5px;
+            left: 15px;
+        }
+        #nombretiendaheader{
+        font-family:Inter;
+        font-size: 15px;
+        color: white;
+        position: absolute;
+        top: 12px;
+        left: 55px;
+        }
+        .language-select-container {
+            position: absolute;
+            right: 150px; /* Ajusta según tu diseño y la posición de los iconos de redes sociales */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .language-select {
+            background-color: #333; /* Color de fondo para que coincida con el header */
+            color: white; /* Color del texto */
+            border: none;/* Color del borde */
+            padding: 5px 10px 5px 10px; /* Padding para texto y espacio para la flecha */
+            font-family: Inter, sans-serif;
+            font-size: 15px;
+        /* Bordes redondeados */
+            cursor: pointer;
+        }
+        
+        .language-select:focus {
+            outline: none; /* Elimina el contorno al enfocar */
+        }
+     
+        /* Estilos para los iconos de redes sociales */
+        #social-icons {
+            position: absolute;
+            right: 20px; 
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #social-icons #social-icon {
+            display: inline-block;
+            margin-left: 10px; /* Espacio entre íconos */
+        }
+
+        #social-icons #social-icon img {
+            height: 26px; 
+            vertical-align: middle; 
+        }
+        /* Añade estilos para :hover para los iconos de redes sociales si es necesario */
+        #social-icons #social-icon:hover {
+            /* Estilos para el estado hover, por ejemplo: */
+            opacity: 0.7;
+        }
+
+
+        /*HEADER CON MENU*/
+        #logocontexto {
+            margin-top: 3%;
+            display: flex; /* Utiliza flexbox para organizar el logo y el texto */
+            flex-direction:row; /* Organiza el logo y el texto en una columna */
+            align-items: center; /* Centra los elementos horizontalmente */
+            justify-content: center; /* Centra los elementos verticalmente */
+        }
+
+        #logocontexto img {
+            margin-top: 1%;
+            width: 70px; /* Mantiene la relación de aspecto */
+            height: 70px; /* Ajusta la altura según sea necesario para tu diseño */
+        }
+
+        #logocontexto span {
+            font-family: 'Inter', sans-serif;
+            font-size: 25px; /* Ajusta el tamaño del texto según sea necesario */
+            color: #333;
+            margin-top: 10px; /* Espacio entre el logo y el nombre de la tienda */
+        }
+
+        #headerconmenu {
+        
+            background: #fff; /* Fondo blanco para el segundo header */
+            height: 150px; /* Altura ajustada para coincidir con tu imagen */
+            width: 100%; /* Asegura que se extienda a todo el ancho */
+            display: flex; /* Utiliza flexbox para organizar los elementos */
+            flex-direction: column; /* Organiza los elementos en una columna */
+            justify-content: space-between; /* Separa el logo y el menú de navegación */
+            /* Centra los elementos horizontalmente */
+            padding: 10px 0; /* Añade un relleno vertical para dar espacio */
+        }
+
+        #headerconmenu nav{
+            margin-top: 2.4%;
+            width: 80%;
+        }
+        #headerconmenu nav ul {
+            list-style-type: none; /* Remueve los estilos de lista */
+        }
+
+        #headerconmenu nav ul li {
+            display: inline; /* Muestra los elementos de lista en línea */
+        }
+
+        #headerconmenu nav ul li a {
+            text-decoration: none; /* Remueve el subrayado de los enlaces */
+            color: #333; /* Color del texto para los enlaces */
+            font-family: Inter, sans-serif; /* Fuente para los enlaces */
+            font-size: 15px; /* Tamaño de fuente para los enlaces */
+            padding: 10px 15px; /* Espaciado alrededor de los enlaces para aumentar el área clickeable */
+        }
+
+        #headerconmenu nav ul li a:hover {
+            color: #000; /* Cambia el color al pasar el ratón */
+            background-color: #f5f5f5; /* Fondo sutil al pasar el ratón */
+            border-radius: 2px; /* Bordes redondeados para el fondo al pasar el ratón */
+        }
+        #icon-menu{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 10px;
+            top: 150px;
+            font-size: 20px;
+            background: #eeeeeefa;
+            border-radius: 100%;
+            color: #787878;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            cursor: pointer;
+            padding: 10px;
+            display: none;
+        }
+        #icon-menu:hover{
+            opacity: 0.8;
+        }
+        #botones{
+            margin-top: -40px;
+        margin-left: 68%;
+        background-color: white;
+        
+        }
+        #botones.no-autenticado {
+            margin-top: -60px;
+            margin-left: 68%;
+        }
+        
+        #botones.autenticado {
+            margin-top: -60px;
+            margin-left: 83%; /* Ajusta esto según sea necesario */
+        }
+        .button {
+
+            font-family: Inter;
+            background-color: #0477ff; /* Color de fondo */
+            border: none; /* Sin borde */
+            color: white; /* Color del texto */
+            padding: 10px 20px; /* Espaciado interno */
+            text-align: center; /* Texto centrado */
+
+            display: inline-block; /* Permitir que se coloquen en la misma línea si hay espacio */
+            font-size: 16px; /* Tamaño del texto */
+            margin: 4px 2px; /* Margen alrededor de los botones */
+            /* Cursor en forma de mano al pasar por encima */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para dar profundidad */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Color de fondo al pasar el cursor */
+        }
+
+        /* Puedes añadir estilos específicos para cada botón si es necesario */
+        #login-button {
+            
+            cursor:url(/images/persona.png),auto;   /* Estilos específicos para el botón Acceder */
+        }
+        .cart-counter {
+            position: relative;
+            display: inline-block;
+        }
+        .cart-counter .count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        #cart-button:hover {
+            cursor:url(/images/carrocompra.png),auto; /* Estilos específicos para el botón Mi cesta */
+        }
+        .button-icon {
+            /* Alineación vertical con respecto a la línea de texto */
+            vertical-align: middle;
+            /* Añadir espacio a la izquierda del ícono si es necesario */
+            margin-left: 5px;
+            width: 16px; /* O la dimensión que prefieras */
+            height: auto; /* Para mantener la proporción de la imagen */
+        }
+        #menuPerfil:hover{
+            scale: 1.1;
+            
+        }
+            #menuPerfil {
+                margin-left: 1430px;
+                margin-top: -42px;
+                position: relative;
+            }
+            #perfilContainer{
+                display: flex; 
+                align-items: center;
+                 cursor: pointer;
+            }
+            #perfilContainer #iconoFlecha{
+                width: 12px; 
+                height: 12px;
+            }
+            #fotoPerfil {
+                width: 40px; 
+                height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            #fotoPerfil:hover {
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            }
+            .menuOculto {
+                display: none;
+                position: absolute; /* Posicionamiento absoluto respecto a su contenedor relativo */
+                right: 0; /* Alinea el borde derecho del menú desplegable con el borde derecho de #menuPerfil */
+                background-color: #f9f9f9;
+                min-width: 180px;
+                box-shadow: 5px 8px 16px 5px rgb(0, 0, 0);
+                z-index: 100;
+            }
+            
+            .menuOculto a {
+                z-index: 1000;
+                text-justify: center;
+                font-size: 14px;
+                font-family: Inter;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+            
+            .menuOculto a:hover {
+                background-color: #f1f1f1;
+            }
+          
+        /* .carrusel {
+margin-top: 46px;
+            display: flex;
+            padding: 0;
+            width: 500%; 
+            animation: slider 40s infinite linear; 
+        }
+        
+        .carruselli {
+            
+            z-index: -1;
+            overflow: hidden;
+            position: relative;
+            height: auto; 
+            width: 20%; 
+            list-style: none;
+            margin-top: 10px;
+        }
+        
+        .carruselimg {
+            
+            width: 100%;
+            display: block; 
+            height: auto;
+        } */
+
+        
+        
+        .productopycategoria {
+            display: flex;
+            justify-content: space-between; /* Esto separa los elementos a ambos extremos del contenedor */
+            align-items: center; /* Alinea verticalmente */
+            margin-top: 2%;
+            width: 100%; /* Ocupa todo el ancho disponible */
+            padding-left: 120px; /* Añade un margen a la izquierda del contenedor */
+    padding-right: 110px; 
+        }
+        
+        .categoria-container {
+            display: flex;
+            align-items: center; /* Si quieres alinear verticalmente los elementos dentro */
+        }
+        
+        #productop {
+            color: #333;
+            font-family: Inter, sans-serif;
+            font-size: 18px;
+            margin-right: 10px; /* Agrega un espacio entre el texto y el select */
+        }
+        
+        .categoria {
+            z-index: 1; /* Asegúrate de que el z-index sea positivo */
+            border: 1px solid rgb(46, 46, 46);
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            padding: 5px 10px;
+            font-family: Inter, sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+        }
+ 
+     
+        .boton-imagen a {
+            background-color: transparent; /* Fondo transparente */
+            border: none; /* Sin bordes */
+            display: flex; /* Para alinear la imagen y el texto */
+            align-items: center; /* Alineación vertical centrada */
+            cursor: pointer; /* Cursor en forma de mano al pasar por encima */
+            padding: 8px; /* Espaciado interno */
+            font-family: Inter, sans-serif; /* Fuente Inter */
+            font-size: 18px; /* Mismo tamaño de fuente que el texto 'Categoria' */
+            color: #333; /* Color del texto */
+            text-decoration: none;
+        }
+        
+        .boton-imagen img {
+            width: 24px; /* Tamaño de la imagen */
+            height: 24px; /* Tamaño de la imagen */
+            margin-right: 8px; /* Espaciado entre la imagen y el texto */
+        }
+        
+        .boton-imagen .cat{
+            width: 200px;
+            margin-left: -400px;
+        }
+        .boton-imagen .cat:hover,.boton-imagen .prod:hover {background-color: #29292923;border-radius: 50px;}
+  
+        .productos {
+        margin-top: -1% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: center !important;    
+    }
+    
+    
+    .card {
+        position: relative !important;
+        width: 300px !important;
+        height: 300px !important;
+    
+        margin: 35px !important;
+    }
+    
+    .card .face {
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
+        backface-visibility: hidden !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        transition: 1s !important;
+    }
+    
+    .card .front {
+        transform: perspective(600px) rotateY(0deg) !important;
+        box-shadow: 0 5px 10px #000 !important;
+    }
+    
+    .card .front img {
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    
+    
+    .card .back {
+        transform: perspective(600px) rotateY(180deg);       
+        padding: 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        text-align: center !important;
+        box-shadow: 0 5px 10px #000 !important;
+    }
+    
+
+    
+    .card .back .link button {
+        cursor: pointer !important;
+        font-family: Inter !important;
+        background-color: #0477ff !important; /* Color de fondo */
+                border: none !important; /* Sin borde */
+                color: white !important; /* Color del texto */
+                padding: 10px 20px 10px 20px !important; /* Espaciado interno */
+                text-align: center !important; /* Texto centrado */
+    
+                display: inline-block !important;  /* Permitir que se coloquen en la misma línea si hay espacio */
+                font-size: 16px !important; /* Tamaño del texto */
+                margin: 4px 2px !important; /* Margen alrededor de los botones */
+                /* Cursor en forma de mano al pasar por encima */
+                border-radius: 5px !important; /* Bordes redondeados */
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important; /* Sombra suave para dar profundidad */
+                transition: background-color 0.3s !important; /* Transición suave para el color de fondo */
+    }
+    
+    .titulo {
+        color: black !important;
+        font-family: Inter !important;
+        font-size: 13px !important;
+        margin-top: 10px !important;
+        letter-spacing: 2px !important;
+    }
+    .descripcion{
+        
+        font-family: Inter !important;
+        font-size: 11px !important ;
+    }
+    
+    
+    .card:hover .front {
+        transform: perspective(600px) rotateY(180deg) !important;
+    }
+    
+    .card:hover .back {
+        transform: perspective(600px) rotateY(360deg) !important;
+    }
+
+        /* Estilos para el pie de página */
+        footer {
+            font-family: Inter;
+            background: #333; /* Cambiar por el color deseado */
+            color: #fff;
+            height: 170px;
+            padding:1rem 0;
+            margin-bottom: 0;
+            bottom: 0px;
+        }
+        .rating .fa {
+            color: #ccc; /* Color por defecto de las estrellas */
+          }
+          
+          .rating .fa.active {
+            color: #ffcc00; /* Color amarillo para las estrellas activas */
+          }
+          .estrellastexto{
+            margin-left: 50px;
+            margin-top: 20px;
+          }
+          .rating{
+            margin-top: 5px;
+            margin-left: 25px;
+          }
+          #rating-text{
+            font-size: 30px;
+            margin-top: -35px;
+            margin-left: 180px;
+            color: #ffcc00;
+          }
+          .copyright{
+            font-size: 22px;
+            margin-top: -40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .legal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -45px;
+            margin-left: 1200px;
+        }
+        
+        .legal a {
+            color: white;
+            font-family: Inter;
+            font-size: 14px;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .legal a:hover {
+        scale: 1.1;
+        }
+
+ /* MOVILES */
+@media only screen and  (max-width: 600px)  {
+  header{
+    z-index: 99999;
+  }
+    #logocabecera{
+    width: 10%;}
+    #social-icons #social-icon img {
+        height: 15px; 
+        vertical-align: middle; 
+    }
+    .language-select {
+    font-size: 12px;
+    margin-left: 50%;
+}
+
+/*2 CABECERA*/
+#headerconmenu{
+    background-color: white;
+    z-index: 9999;
+}
+#logocontexto img {
+    display: none;
+    }
+    #logocontexto span {
+        
+    display: none;
+    }
+    
+    #headerconmenu nav {
+        display: none;
+        width: 100%;
+    }
+    #headerconmenu nav ul li a:hover {height: 100%; scale: 1.1;}
+    #icon-menu {
+        width: 20px;
+        height: 20px;
+        top: 12px;
+        z-index: 1100;
+        display: flex; /* Muestra el ícono del menú */
+    }
+
+    #iconoboton {
+        width: 100%;
+        margin-top: 30px;
+        background-color: white;
+        z-index: 11000000;
+        position: fixed;
+        height: 41px; /* Prueba con 'fixed' si 'sticky' no funciona */
+    }
+    
+
+    /* Estilos para el menú de navegación cuando está activo */
+    #headerconmenu nav.active {
+        
+        display: block; /* Muestra el menú de navegación */
+        position: fixed;
+        background-color: #fff;
+        height: 100%;
+        top: 40px; /* Ajusta según la altura de tu cabecera */
+        width: 100%;
+       z-index: 1000;
+    }
+
+    /* Estilos para los elementos de la lista en el menú desplegable */
+
+    #headerconmenu nav ul li {
+        padding: 11.5%;
+        display: block; /* Elementos de lista en bloque */
+        text-align: center; /* Centra el texto */
+        margin-top: 10px;
+    }
+    #headerconmenu nav .no-autenticado-menu li{
+        padding: 23%;
+    }
+    #botones.no-autenticado {
+        margin-left: 20%;
+    }
+    
+    #botones.autenticado {
+        margin-left: 63%; /* Ajusta esto según sea necesario */
+    }
+    #botones {
+        position: fixed; /* Posicionamiento absoluto para mayor control */
+        top: 86px; /* Alineación en la parte superior de la ventana */ 
+         /* Alineación hacia la derecha de la ventana */
+        margin-left: 10%; /* Anulamos el margen izquierdo para pantallas pequeñas */
+        display: flex; /* Usamos flexbox para una mejor alineación */
+        flex-direction: row; /* Alineación horizontal de los botones */
+       /* Espacio entre los botones */
+        z-index: 1111;
+    }
+        #menuPerfil:hover{
+            scale: 1.1;
+            
+        }
+            #menuPerfil {
+                margin-left: 330px;
+                margin-top: 10px;
+                position: relative;
+                z-index: 1111111111111;
+            }
+            #perfilContainer #iconoFlecha{
+                width: 10px; 
+                height: 10px;
+            }
+            #fotoPerfil {
+                width: 25px; 
+                height: 25px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+          
+            .menuOculto {
+                display: none;
+                position: absolute; /* Posicionamiento absoluto respecto a su contenedor relativo */
+                right: 0; /* Alinea el borde derecho del menú desplegable con el borde derecho de #menuPerfil */
+                background-color: #f9f9f9;
+                min-width: 120px;
+                box-shadow: 5px 8px 16px 5px rgb(0, 0, 0);
+                z-index: 1;
+            }
+            
+            .menuOculto a {
+                text-justify: center;
+                font-size: 9px;
+                font-family: Inter;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+            
+            .menuOculto a:hover {
+                background-color: #f1f1f1;
+            }
+          
+    .button {
+        padding: 5px 10px; /* Ajustamos el relleno para dispositivos móviles */
+        font-size: 10px; /* Tamaño de fuente más pequeño para mejor ajuste */
+    }
+    /* Ajustes adicionales para los iconos de los botones si los tienes */
+    .button-icon {
+        width: 14px; /* Tamaño del ícono ajustado para móviles */
+    }
+    #productop {
+        margin-left: -50%;
+        font-size: 12px;
+        margin-right: 7px; /* Agrega un espacio entre el texto y el select */
+    }
+    .categoria {
+        
+              padding: 2px 5px;
+            font-size: 10px;
+        cursor: pointer;
+    }
+    .boton-imagen a {
+      
+        padding: 4px; /* Espaciado interno */
+  
+        font-size: 14px; /* Mismo tamaño de fuente que el texto 'Categoria' */
+  
+    }
+    
+    .boton-imagen img {
+        width: 12px; /* Tamaño de la imagen */
+        height: 12px; /* Tamaño de la imagen */
+        margin-right: 8px; /* Espaciado entre la imagen y el texto */
+    }
+    .boton-imagen .prod{
+        margin-top: 40px;
+        margin-left: -200px;
+    }
+    .boton-imagen .cat{
+        margin-top: -30px;
+        width: 200px;
+        margin-left: -80px;
+    }
+    .card, .back {
+        width: 117.5px;
+        height: 117.6px;
+         
+    }
+    .titulo {
+        color: black;
+        font-family: Inter;
+        font-size:6px;
+        margin-top:2px;
+        letter-spacing: 2px;
+    }
+    .descripcion{
+        
+        font-family: Inter;
+        font-size: 4px;
+    }
+    .card .back .link button {
+       
+                padding: 3px 6px 3px 6px; /* Espaciado interno */
+               
+    
+             
+                font-size: 8px; /* Tamaño del texto */
+                margin: 1px 0px; /* Margen alrededor de los botones */
+                /* Cursor en forma de mano al pasar por encima */
+          
+    }
+    footer{
+        margin-bottom: -20px;
+    }
+    .card .back .link {
+        
+        height: 20px;
+        line-height: 20px;
+    }
+    .carruselli {
+        z-index: 998;
+        margin-top: -115px;
+    }
+      .estrellastexto{
+        margin-left: 110px;
+        margin-top: -5px;
+      }
+      .rating{
+        
+        margin-top: 5px;
+       
+      }
+      #rating-text{
+        font-size: 16px;
+        margin-top: -19px;
+        margin-left: 125px;
+        
+      }
+      .estrellastexto p {
+        font-size: 15px;
+      }
+      .rating i{
+        font-size: 13px;
+      }
+      .copyright{
+        margin-top: 15px;
+     
+      }
+      .legal {display: none;}
+  }
+
+  /* Tamaños para tablets */
+  @media only screen and (min-width: 601px) and (max-width: 1025px) {
+    header{
+        z-index: 99999;
+      }
+        #logocabecera{
+        width: 4%;}
+        #social-icons #social-icon img {
+            height: 15px; 
+            vertical-align: middle; 
+        }
+        .language-select {
+        font-size: 12px;
+        margin-left: 50%;
+    }
+    
+    /*2 CABECERA*/
+    #headerconmenu{
+        background-color: white;
+        z-index: 9999;
+    }
+    #logocontexto img {
+        display: none;
+        }
+        #logocontexto span {
+            
+        display: none;
+        }
+        
+        #headerconmenu nav {
+            display: none;
+            width: 100%;
+        }
+        #headerconmenu nav ul li a:hover {height: 100%;}
+        #icon-menu {
+            width: 20px;
+            height: 20px;
+            top: 12px;
+            z-index: 1100;
+            display: flex; /* Muestra el ícono del menú */
+        }
+    
+        #iconoboton {
+            width: 100%;
+            margin-top: 30px;
+            background-color: white;
+            z-index: 11000000;
+            position: fixed;
+            height: 41px; /* Prueba con 'fixed' si 'sticky' no funciona */
+        }
+        
+    
+        /* Estilos para el menú de navegación cuando está activo */
+        #headerconmenu nav.active {
+            
+            display: block; /* Muestra el menú de navegación */
+            position: fixed;
+            background-color: #fff;
+            height: 100%;
+            top: 40px; /* Ajusta según la altura de tu cabecera */
+            width: 100%;
+           z-index: 1000;
+        }
+    
+        /* Estilos para los elementos de la lista en el menú desplegable */
+        #headerconmenu nav ul li {
+            padding: 13.5%;
+            display: block; /* Elementos de lista en bloque */
+            text-align: center; /* Centra el texto */
+            margin-top: 10px;
+        }
+        #botones {
+            position: fixed; /* Posicionamiento absoluto para mayor control */
+            top: 85px; /* Alineación en la parte superior de la ventana */ 
+           
+            margin-left: 0; /* Anulamos el margen izquierdo para pantallas pequeñas */
+            display: flex; /* Usamos flexbox para una mejor alineación */
+            flex-direction: row; /* Alineación horizontal de los botones */
+            gap: 10px; /* Espacio entre los botones */
+            z-index: 11111111;
+        }
+    
+        .button {
+            padding: 5px 10px; /* Ajustamos el relleno para dispositivos móviles */
+            font-size: 10px; /* Tamaño de fuente más pequeño para mejor ajuste */
+        }
+        /* Ajustes adicionales para los iconos de los botones si los tienes */
+        .button-icon {
+            width: 14px; /* Tamaño del ícono ajustado para móviles */
+        }
+        #botones.no-autenticado {
+            margin-left: 57%;
+        }
+        
+        #botones.autenticado {
+            margin-left: 82%; /* Ajusta esto según sea necesario */
+        }
+        #menuPerfil:hover{
+            scale: 1.1;
+            
+        }
+            #menuPerfil {
+                margin-left: 720px;
+                margin-top: 10px;
+                position: relative;
+                z-index: 1111111111111;
+            }
+            #perfilContainer #iconoFlecha{
+                width: 10px; 
+                height: 10px;
+            }
+            #fotoPerfil {
+                width: 25px; 
+                height: 25px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+          
+            .menuOculto {
+                display: none;
+                position: absolute; /* Posicionamiento absoluto respecto a su contenedor relativo */
+                right: 0; /* Alinea el borde derecho del menú desplegable con el borde derecho de #menuPerfil */
+                background-color: #f9f9f9;
+                min-width: 120px;
+                box-shadow: 5px 8px 16px 5px rgb(0, 0, 0);
+                z-index: 1;
+            }
+            
+            .menuOculto a {
+                text-justify: center;
+                font-size: 9px;
+                font-family: Inter;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+            
+            .menuOculto a:hover {
+                background-color: #f1f1f1;
+            }
+            #productop {
+                margin-left: -30%;
+                font-size: 20px;
+                margin-right: 7px; /* Agrega un espacio entre el texto y el select */
+            }
+            .categoria {
+                
+                      padding: 2px 5px;
+                    font-size: 16px;
+                cursor: pointer;
+            }
+            .boton-imagen a {
+              
+                padding: 4px; /* Espaciado interno */
+          
+                font-size: 20px; /* Mismo tamaño de fuente que el texto 'Categoria' */
+          
+            }
+            
+            .boton-imagen img {
+                width: 18px; /* Tamaño de la imagen */
+                height: 18px; /* Tamaño de la imagen */
+                margin-right: 8px; /* Espaciado entre la imagen y el texto */
+            }
+            .boton-imagen .prod{
+                margin-top: 40px;
+                margin-left: -200px;
+            }
+            .boton-imagen .cat{
+                margin-top: -30px;
+                
+                margin-left: 70px;
+            }
+        .card, .back {
+            width: 310px;
+            height: 310px;
+             
+        }
+        .titulo {
+            color: black;
+            font-family: Inter;
+            font-size:6px;
+            margin-top:2px;
+            letter-spacing: 2px;
+        }
+        .descripcion{
+            
+            font-family: Inter;
+            font-size: 4px;
+        }
+        .card .back .link button {
+           
+                    padding: 3px 6px 3px 6px; /* Espaciado interno */
+                   
+        
+                 
+                    font-size: 8px; /* Tamaño del texto */
+                    margin: 1px 0px; /* Margen alrededor de los botones */
+                    /* Cursor en forma de mano al pasar por encima */
+              
+        }
+        .card .back .link {
+            
+            height: 20px;
+            line-height: 20px;
+        }
+        .carruselli {
+            z-index: 998;
+            margin-top: -115px;
+        }
+        footer{
+            bottom: 0;
+        }
+        .estrellastexto{
+            margin-left: 50px;
+            margin-top: 16px;
+          }
+          .rating{
+        margin-left: 3px;
+            margin-top: 5px;
+           
+          }
+          #rating-text{
+            font-size: 14px;
+            margin-top: -18px;
+            margin-left: 120px;
+            
+          }
+          .estrellastexto p {
+            font-size: 15px;
+          }
+          .rating i{
+            font-size: 13px;
+          }
+          .copyright{
+            margin-top: -40px;
+         
+          }
+          .legal {
+
+            margin-top: -42px;
+            margin-left: 490px;
+        }
+        
+        .legal a {
+            font-size: 14px;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .legal a:hover {
+        scale: 1.1;
+        }
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    body {
+      font-size: 20px;
+    }
+    /*CABECERA*/
+    header {
+        height: 40px;
+    }
+  #logocabecera{
+
+     width: 2.2%;}
+
+     #nombretiendaheader{
+        top: 9px;
+        left: 60px;
+        font-size: 20px;
+     }
+
+    #social-icons #social-icon img {
+        height: 30px; 
+        vertical-align: middle; 
+    }
+    .language-select {
+    font-size: 20px;
+    margin-left: -10%;
+}
+/*2 CABECERA*/
+#logocontexto img {
+width: 100px;
+height: 100px;
+}
+#logocontexto span {
+font-size: 40px;
+}
+#headerconmenu nav{
+    margin-top: -20px;
+    width: 80%;
+}
+#headerconmenu nav ul li a {
+    font-size: 20px;
+}
+.button{
+    margin-top: 5px;
+}
+#botones{  
+z-index: inherit;
+    margin-left: 80%
+}
+/*CARRUSEL*/
+.carruselli {
+    margin-top: 5px;
+}
+#productop{
+ margin-left: 90px;
+    font-size: 22px;
+ 
+}
+.categoria {
+    
+          padding: 2px 5px;
+        font-size: 22px;
+    cursor: pointer;
+}
+.boton-imagen a {
+  
+    padding: 4px; /* Espaciado interno */
+
+    font-size: 22px; /* Mismo tamaño de fuente que el texto 'Categoria' */
+
+}
+
+.boton-imagen img {
+    width: 22px; /* Tamaño de la imagen */
+    height: 22px; /* Tamaño de la imagen */
+    margin-right: 8px; /* Espaciado entre la imagen y el texto */
+}
+
+.boton-imagen .cat{
+   
+    width: 220px;
+    margin-left: -600px;
+}
+.boton-imagen .prod{
+    width: 220px;
+margin-left: -300px;
+}
+.card {
+    width: 320px;
+    height: 320px; 
+}
+
+#menuPerfil:hover{
+    scale: 1.1;
+    
+}
+    #menuPerfil {
+        margin-left: 1770px;
+        margin-top: -52px;
+      
+    }
+  
+    #perfilContainer #iconoFlecha{
+        width: 22px; 
+        height: 22px;
+    }
+    #fotoPerfil {
+        width: 50px; 
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    #fotoPerfil:hover {
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .menuOculto {
+        display: none;
+        position: absolute; /* Posicionamiento absoluto respecto a su contenedor relativo */
+        right: 0; /* Alinea el borde derecho del menú desplegable con el borde derecho de #menuPerfil */
+        background-color: #f9f9f9;
+        min-width: 180px;
+        box-shadow: 5px 8px 16px 5px rgb(0, 0, 0);
+        z-index: 1;
+    }
+    
+    .menuOculto a {
+        text-justify: center;
+        font-size: 14px;
+        font-family: Inter;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .menuOculto a:hover {
+        background-color: #f1f1f1;
+    }
+    #botones.no-autenticado {
+        margin-left: 75%;
+    }
+    
+    #botones.autenticado {
+        margin-left: 85%; /* Ajusta esto según sea necesario */
+    }
+    .legal {
+ 
+        margin-top: -55px;
+        margin-left: 1580px;
+    }
+    
+    .legal a {
+        color: white;
+        font-family: Inter;
+        font-size: 14px;
+        text-decoration: none;
+        margin-bottom: 10px;
+    }
+  }
+

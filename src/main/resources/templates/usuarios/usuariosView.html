@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Usuario</title>
+    <link rel="stylesheet" href="/css/vistausuarios.css">
+  
+  </head>
+
+  <body>
+    <header>
+      <a href="/" text-decoration="none"><img src="/images/Logo.png" alt="Logo" id="logocabecera"></a>
+      <span id="nombretiendaheader">Ivastock´s</span>
+      <div class="language-select-container">
+          <select id="language-select" class="language-select">
+              <option value="es">Español</option>
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+
+          </select>
+      </div>
+      <div id="social-icons">
+
+          <a href="#" id="social-icon"><img src="/images/twittericon.png" alt="Twitter"></a>
+          <a href="#" id="social-icon"><img src="/images/facebookicon.png" alt="Facebook"></a>
+          <a href="#" id="social-icon"><img src="/images/instagramicon.png" alt="Instagram"></a>
+      </div>
+  </header>
+    <h1>Listado de usuarios</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Contraseña</th>
+          <th>Rol</th>
+          <th>Fecha de registro</th>
+          <th>Valoraciones</th>
+          <th colspan="2">Funciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="usuario : ${listaUsuarios}">
+          <td th:text="${usuario.id}">Id</td>
+          <td>
+            <img th:src="'/files/'+${usuario.imagen}" alt="Imagen de perfil" style="width: 40px; height: auto;border-radius: 50%;text-align: center;"/>
+          </td>          
+          <td th:text="${usuario.nombre}">nombre</td>
+          <td th:text="${usuario.password}">contraseña</td>
+          <td th:text="${usuario.rol}">Rol</td>
+          <td th:text="${usuario.fechaRegistro}">fecha</td>
+          <td><a th:href="@{/valoracion/user/{id}(id=${usuario.id})}">Valoraciones</a></td>
+
+          <td>
+            <a th:href="@{/editarUsuarios/{id}(id=${usuario.id})}">Editar</a>
+          </td>
+          <td>
+            <a th:href="@{/borrarUsuarios/{id}(id=${usuario.id})}">Borrar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+    <a th:href="@{/nuevoUsuario}">Nuevo usuario</a><br />
+  </body>
+</html>
