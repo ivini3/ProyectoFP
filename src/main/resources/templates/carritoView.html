@@ -5,37 +5,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="/css/carrito.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Carrito de Compras</h1>
-    
-    <h2>Productos en el carrito:</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Cantidad</th> <!-- Nueva columna para la cantidad -->
-                <th>Imagen</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="producto : ${carrito.productos}">
-                <td th:text="${producto.nombre}"></td>
-                <td th:text="${producto.precio}"></td>
-                <td th:text="${producto.cantidad}"></td> <!-- Muestra la cantidad del producto -->
-                <td><img th:src="'/files/' + ${producto.imagen}" alt="Imagen del producto"></td>
-                <td>
-                    <form method="post" th:action="@{/eliminar/{id}(id=${producto.id})}">
-                        <button type="submit">Eliminar</button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <h2>Total: <span th:text="${total}"></span></h2>
+    <header>
+        <img src="/images/Logo.png" alt="Logo" id="logocabecera">
+        <span id="nombretiendaheader">Ivastock´s</span>
+        <div class="language-select-container">
+            <select id="language-select" class="language-select">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
 
-    <a th:href="@{/}" text-decoration="none">Inicio</a>
+            </select>
+        </div>
+        <div id="social-icons">
+
+            <a href="#" id="social-icon"><img src="/images/twittericon.png" alt="Twitter"></a>
+            <a href="#" id="social-icon"><img src="/images/facebookicon.png" alt="Facebook"></a>
+            <a href="#" id="social-icon"><img src="/images/instagramicon.png" alt="Instagram"></a>
+        </div>
+    </header>
+    <div class="container px-3 my-5 clearfix">
+        <!-- Shopping cart table -->
+        <div class="card">
+            <div class="card-header">
+                <h2>Carrito de Compras</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered m-0">
+                        <thead>
+                            <tr>
+                                <!-- Set columns width -->
+                                <th class="text-center py-3 px-4" style="min-width: 400px;" >Nombres</th>
+                                <th class="text-right py-3 px-4" style="width: 100px;">Precio</th>
+                                <th class="text-center py-3 px-4" style="width: 120px;">Cantidad</th>
+                                <th class="text-center align-middle py-3 px-0" style="width: 40px;">
+                                    <a href="#" class="shop-tooltip float-none text-light" title=""
+                                       data-original-title="Clear cart">
+                                       <i class="ino ion-md-trash"></i></a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="producto : ${carrito.productos}">
+                                <td class="p-4">
+                                    <div class="media align-items-center">
+                                        <img th:src="'/files/' + ${producto.imagen}"
+                                             class="d-block ui-w-40 ui-bordered mr-4" alt="" id="imagenesproductos">
+                                        <div class="media-body">
+                                            <a href="#" class="d-block text-dark" th:text="${producto.nombre}"></a>
+                                            <small>
+                                                <span class="text-muted" th:text="${producto.descripcion}"></span>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-right font-weight-semibold align-middle p-4"
+                                    th:text="${producto.precio}"></td>
+                                <td class="align-middle p-4" th:text="${producto.cantidad}"></td>
+                                <td class="text-center align-middle px-0">
+                                    <form method="post" th:action="@{/eliminar/{id}(id=${producto.id})}">
+                                        <button type="submit" class="shop-tooltip close float-none text-danger" title=""
+                                                data-original-title="Eliminar">×</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                    <!-- Botones en la parte inferior izquierda, separados un poco -->
+                    <div>
+                        <a  class="btn btn-lg btn-secondary mr-2" th:href="@{/}">Seguir Comprando</a>
+                        <button type="button" class="btn btn-lg btn-primary">Finalizar Compra</button>
+                    </div>
+                    <!-- Precio Total en la parte inferior derecha -->
+                    <div>
+                        <label class="text-muted font-weight-normal m-0">Precio Total</label>
+                        <div class="text-large"><strong th:text="${total}"></strong></div>
+                    </div>
+                </div>
+    </div>
 </body>
 </html>
