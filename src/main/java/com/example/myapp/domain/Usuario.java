@@ -19,7 +19,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -38,4 +38,46 @@ private Rol rol;
     private LocalDateTime fechaRegistro = LocalDateTime.now();
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private Carrito carrito;
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public Rol getRol() {
+        return rol;
+    }
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+    public String getImagen() {
+        return imagen;
+    }
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    public LocalDateTime getFechaRegistro() {
+        return fechaRegistro;
+    }
+    public void setFechaRegistro(LocalDateTime fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+    public Carrito getCarrito() {
+        return carrito;
+    }
+    public void setCarrito(Carrito carrito) {
+        this.carrito = carrito;
+    }
 }

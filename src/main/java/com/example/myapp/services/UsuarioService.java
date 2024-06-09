@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.myapp.domain.Usuario;
-import com.example.myapp.dto.ContraseñaDto;
+import com.example.myapp.dto.ContrasenaDto;
 import com.example.myapp.repository.UsuarioRepository;
 @Service
 public class UsuarioService {
@@ -87,7 +87,7 @@ public class UsuarioService {
         }
         return null;
     }
-    public Usuario convertDtoToUsuario(ContraseñaDto userDto){
+    public Usuario convertDtoToUsuario(ContrasenaDto userDto){
         Usuario userLogueado = obtenerUsuarioConectado();
         if (userLogueado != null){
             userLogueado.setPassword(userDto.getContraseña());

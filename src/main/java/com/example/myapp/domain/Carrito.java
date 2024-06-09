@@ -17,7 +17,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "numeropedido")
@@ -33,4 +33,28 @@ public class Carrito {
     private int totalCantidad = 0;
     @OneToMany(mappedBy = "carrito", cascade = CascadeType.ALL)
     private List<Producto> productos = new ArrayList<>();
+    public long getNumeropedido() {
+        return numeropedido;
+    }
+    public void setNumeropedido(long numeropedido) {
+        this.numeropedido = numeropedido;
+    }
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    public int getTotalCantidad() {
+        return totalCantidad;
+    }
+    public void setTotalCantidad(int totalCantidad) {
+        this.totalCantidad = totalCantidad;
+    }
+    public List<Producto> getProductos() {
+        return productos;
+    }
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
 }

@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.example.myapp.domain.Rol;
 import com.example.myapp.domain.Usuario;
-import com.example.myapp.dto.ContraseñaDto;
+import com.example.myapp.dto.ContrasenaDto;
 import com.example.myapp.services.UsuarioService;
 
 import jakarta.validation.Valid;
@@ -93,14 +93,14 @@ model.addAttribute("usuarioForm", usuario);
 
     @GetMapping("edit/passLogued")
     public String showEditPassLoguedForm(Model model) {
-        ContraseñaDto userDto = new ContraseñaDto();
+        ContrasenaDto userDto = new ContrasenaDto();
         model.addAttribute("usuarioForm", userDto);
         return "usuarios/editPassView";
     }
 
     @PostMapping("edit/passLogued/submit")
     public String showEditPassLoguedForm(
-            @Valid ContraseñaDto usuarioDtoForm,
+            @Valid ContrasenaDto usuarioDtoForm,
             BindingResult bindingResult) {
         usuarioService.convertDtoToUsuario(usuarioDtoForm);
         return "redirect:/";
