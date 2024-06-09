@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .cssError {
-        background-color: red;
-      }
-    </style>
-  </head>
 
-  <body>
-    <h1>Editar contraseña</h1>
-    <form
-      method="post"
-      action="#"
-      th:action="@{/edit/passLogued/submit}"
-      th:object="${usuarioForm}"
-    >
-    <label>Nueva Contraseña: <input type="password" id="password" th:field="*{contraseña}" /></label><br />
-      <br />
-      <input type="submit" value="Enviar" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña</title>
+    <link rel="stylesheet" href="/css/cambiarcontraseña.css">
+</head>
+
+<body>
+
+    <header>
+      <a th:href="@{/}">
+        <img src="/images/Logo.png" alt="Logo" id="logocabecera">
+        <span id="nombretiendaheader">Ivastock´s</span></a>
+        <div class="language-select-container">
+
+            <select id="language-select" class="language-select">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+
+            </select>
+        </div>
+        <div id="social-icons">
+
+            <a href="#" id="social-icon"><img src="/images/twittericon.png" alt="Twitter"></a>
+            <a href="#" id="social-icon"><img src="/images/facebookicon.png" alt="Facebook"></a>
+            <a href="#" id="social-icon"><img src="/images/instagramicon.png" alt="Instagram"></a>
+        </div>
+    </header>
+    <div id="contenedor-formulario">
+        
+     <form method="post" action="#" th:action="@{/edit/passLogued/submit}" th:object="${usuarioForm}" id="formulario">
+        <div id="contenedor-logo"><img src="/images/Logo.png" alt="Logo" id="logo"><span id="nombrelogo">Ivastock´s</span></div>
+       
+   <label>Nueva Contraseña: <input type="password" id="password" th:field="*{contraseña}" /></label><br />
+        
+        <br>
+        <input type="submit" id="botonenviar">
     </form>
-    <a th:href="@{/public/}">Inicio</a><br />
-  </body>
-</html>
+    <div>
+</body>
+

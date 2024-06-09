@@ -53,7 +53,10 @@ public String showLogin() { return "signinView"; }
       return  "construccion";
   }
 
-
+  @GetMapping("/quienessomos")
+  public String mostrarQuienesSomos(Model model) {
+      return "quienes-somosView";
+  }
   @GetMapping("/contactanos")
     public String mostrarFormularioIncidencia(Model model) {
         model.addAttribute("contactaForm", new Contactanos());

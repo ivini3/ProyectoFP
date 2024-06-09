@@ -16,17 +16,12 @@ html, body {
     overflow-x: hidden; /* Evita desbordamiento horizontal */
 }
 
-    /* Tus estilos para pantallas con una anchura de hasta 1600px */
-
-/*HEADER*/
-/* Estilos para el encabezado */
 header {
     z-index: 99;
     background: #333; /* Cambiar por el color deseado */
     height: 40px;  
     position: fixed;
     width: 100%;
-    
 }
 #logocabecera{
     width: 2.5%;
@@ -44,44 +39,59 @@ left: 55px;
 }
 .language-select-container {
     position: absolute;
-    right: 150px; /* Ajusta según tu diseño y la posición de los iconos de redes sociales */
+    right: 150px;
     top: 50%;
     transform: translateY(-50%);
 }
-
 .language-select {
-    background-color: #333; /* Color de fondo para que coincida con el header */
-    color: white; /* Color del texto */
-    border: none;/* Color del borde */
-    padding: 5px 10px 5px 10px; /* Padding para texto y espacio para la flecha */
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
     font-family: Inter, sans-serif;
     font-size: 15px;
-/* Bordes redondeados */
     cursor: pointer;
 }
-
 .language-select:focus {
-    outline: none; /* Elimina el contorno al enfocar */
+    outline: none;
 }
-
-/* Estilos para los iconos de redes sociales */
 #social-icons {
     position: absolute;
-    right: 20px; 
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
 }
 #social-icons #social-icon {
     display: inline-block;
-    margin-left: 10px; /* Espacio entre íconos */
+    margin-left: 10px;
 }
-
 #social-icons #social-icon img {
-    height: 26px; 
-    vertical-align: middle; 
+    height: 26px;
+    vertical-align: middle;
 }
-/* Añade estilos para :hover para los iconos de redes sociales si es necesario */
 #social-icons #social-icon:hover {
-    /* Estilos para el estado hover, por ejemplo: */
     opacity: 0.7;
+}
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+  }
+  
+  .social-link:hover,
+  .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+  }
+
+  .bg-custom {
+    background-color: #0475ff1d;
 }

@@ -4,18 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Añadir Categoria</title>
+    <link rel="stylesheet" href="/css/editarCategoria.css">
 </head>
 
 <body>
-    
-    <form action="#" method="post" th:action="@{/categoria/editar/submit}" th:object="${categoriaForm}">
-        <label>Id:<input type="text" readonly id="id" th:field="*{id}" /> </label><br/>
-    <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
-        
-        <input type="submit">
-    </form>
 
+
+
+
+    <header>
+        <img src="/images/Logo.png" alt="Logo" id="logocabecera">
+        <span id="nombretiendaheader">Ivastock´s</span>
+        <div class="language-select-container">
+
+            <select id="language-select" class="language-select">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+
+            </select>
+        </div>
+        <div id="social-icons">
+
+            <a href="#" id="social-icon"><img src="/images/twittericon.png" alt="Twitter"></a>
+            <a href="#" id="social-icon"><img src="/images/facebookicon.png" alt="Facebook"></a>
+            <a href="#" id="social-icon"><img src="/images/instagramicon.png" alt="Instagram"></a>
+        </div>
+    </header>
+    <div id="contenedor-formulario">
+        
+    <form id="formulario" action="#" method="post" th:action="@{/nuevaCategoria/submit}" th:object="${categoriaForm}">
+        <div id="contenedor-logo"><img src="/images/Logo.png" alt="Logo" id="logo"><span id="nombrelogo">Ivastock´s</span></div>
+       
+        <label hidden>Id: <input type="text" id="id" th:field="*{id}"  /> </label>
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label> <br>
+        
+        <br>
+        <input type="submit" id="botonenviar">
+    </form>
+    <div>
 </body>
 
 </html>

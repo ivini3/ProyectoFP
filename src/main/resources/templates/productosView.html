@@ -62,7 +62,6 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Nombre Categoria</th>
-            <th>Valoraciones</th>
             <th>Funciones</th>
           </tr>
           </thead>
@@ -71,7 +70,6 @@
             <td  th:text="${producto.id}"></td>
             <td  th:text="${producto.nombre}"></td>
             <td  th:text="${producto.categoria.nombre}"></td>
-            <td><a th:href="@{/valoracion/pro/{id}(id=${producto.id})}">Valoracion</a></td>
             <td ><a th:href="@{/borrarProducto/{id}(id=${producto.id})}">Borrar Producto</a>
         
             <a th:href="@{/editarProducto/{id}(id=${producto.id})}">Editar Producto</a></td>

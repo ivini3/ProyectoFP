@@ -38,8 +38,7 @@
           <th>Contraseña</th>
           <th>Rol</th>
           <th>Fecha de registro</th>
-          <th>Valoraciones</th>
-          <th colspan="2">Funciones</th>
+             <th colspan="2">Funciones</th>
         </tr>
       </thead>
       <tbody>
@@ -52,11 +51,7 @@
           <td th:text="${usuario.password}">contraseña</td>
           <td th:text="${usuario.rol}">Rol</td>
           <td th:text="${usuario.fechaRegistro}">fecha</td>
-          <td><a th:href="@{/valoracion/user/{id}(id=${usuario.id})}">Valoraciones</a></td>
 
-          <td>
-            <a th:href="@{/editarUsuarios/{id}(id=${usuario.id})}">Editar</a>
-          </td>
           <td>
             <a th:href="@{/borrarUsuarios/{id}(id=${usuario.id})}">Borrar</a>
           </td>

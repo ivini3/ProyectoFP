@@ -24,3 +24,27 @@
   z-index: -1;
   position: relative; /* Asegura que z-index tenga efecto */
 }
+
+@media only screen and (min-width: 1600px) {
+  .carousel-indicators{
+    top: 100%;
+ }
+}
+@media only screen and  (max-width: 600px)  {
+  .carousel {
+    margin-top:-70px;
+
+  }
+  .carousel-indicators{
+    top:23%;
+ }
+}
+@media only screen and (min-width: 601px) and (max-width: 1025px) {
+  .carousel {
+    z-index: 100;
+    margin-top:-60px;
+
+  }
+  .carousel-indicators{
+    top:45%;}
+}

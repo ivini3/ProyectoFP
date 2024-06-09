@@ -25,19 +25,19 @@ header {
     position: fixed;
     width: 100%;
 }
-#logocabecera {
-    width: 2%;
+#logocabecera{
+    width: 2.5%;
     position: absolute;
     top: 5px;
     left: 15px;
 }
-#nombretiendaheader {
-    font-family: Inter;
-    font-size: 20px;
-    color: white;
-    position: absolute;
-    top: 6px;
-    left: 55px;
+#nombretiendaheader{
+font-family:Inter;
+font-size: 15px;
+color: white;
+position: absolute;
+top: 12px;
+left: 55px;
 }
 .language-select-container {
     position: absolute;

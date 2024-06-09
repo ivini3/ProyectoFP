@@ -1,181 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/menu.css">
-<script> function cerrarVentana() {
-    var errorContainer = document.querySelector('.error-container');
-    errorContainer.style.display = 'none';
-}
-function mostrarVentanaEmergente() {
-        var modal = document.querySelector('.modal');
-        var overlay = document.querySelector('.overlay');
-        modal.style.display = 'block';
-        overlay.style.display = 'block';
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/categoria.css">
 
-    function cerrarVentanaEmergente() {
-        var modal = document.querySelector('.modal');
-        var overlay = document.querySelector('.overlay');
-        modal.style.display = 'none';
-        overlay.style.display = 'none';
-    }</script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+
 </head>
-<body class="bodi">
- 
-    <nav
-    th:fragment="menu"
-    class="navbar navbar-expand-sm navbar-light bg-light"
-  >
-    <div class="container-fluid">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- menú común para el público -->
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              th:href="@{/public/}"
-            >
-              Inicio</a
-            >
-          </li>
 
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              th:href="@{/public/quienes-somos}"
-            >
-              Quienes somos</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              th:href="@{/public/contactanos}"
-            >
-              Contactanos</a
-            >
-          </li>
-          <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                th:href="@{/productos}"
-              >
-                Productos</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                th:href="@{/categoria}"
-              >
-                Categorias</a
-              >
-            </li>
-          <!-- menú de gestión de usuarios (solo administradores) -->
-          <li sec:authorize="hasRole('ADMIN')" class="nav-item">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              th:href="@{/usuarios}"
-              >Usuarios</a
-            >
-          </li>
-          <!-- menú: Registrarse (solo si no autenticado) -->
-          <!-- menú: Iniciar sesión (solo si no autenticado) -->
-          <li sec:authorize="!isAuthenticated()">
-            <a class="nav-item nav-link active" th:href="@{/login}"
-              >Iniciar sesión</a
-            >
-          </li>
-          <!-- menú: nombre-usuario (solo si autenticado) -->
-          <li
-            class="nav-item ms-md-auto dropdown"
-            sec:authorize="isAuthenticated()"
-          >
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-bs-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <span sec:authentication="name"></span
-            ></a>
-            <ul
-              class="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdown"
-            >
-              <li>
-                <a class="dropdown-item" th:href="@{/user/edit/userLogued}"
-                  >Editar perfil</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" th:href="@{/user/edit/passLogued}"
-                  >Cambiar Contraseña</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" th:href="@{/logout}"
-                  >Cerrar sesión</a
-                >
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+<body>
+
+  <header>
+    <a href="/" text-decoration="none"><img src="/images/Logo.png" alt="Logo" id="logocabecera"></a>
+    <span id="nombretiendaheader">Ivastock´s</span>
+    <div class="language-select-container">
+      <select id="language-select" class="language-select">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+
+      </select>
     </div>
-  </nav>
-    
-    <table border="3px">
-        <th colspan="3">Categorias</th>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Funciones</th>
-        <tr th:each="categoria: ${todaslascategorias}">
-            <td  th:text="${categoria.id}"></td>
-            <td  th:text="${categoria.nombre}"></td>
-            
-            <td ><a th:href="@{/borrarCategoria/{id}(id=${categoria.id})}">Borrar Categoria</a>
-        <br>
-            <a th:href="@{/editarCategoria/{id}(id=${categoria.id})}">Editar Categoria</a></td>
-            
-        </tr>
-        <br>
-        
-    </table>
-    <div class="error-container" th:style="${todaslascategorias.size>0 ? 'display:block':'display:none'}">
-        <p th:text="${error}"></p>
-        <span class="close-btn" onclick="cerrarVentana()">Cerrar</span>
+    <div id="social-icons">
+
+      <a href="#" id="social-icon"><img src="/images/twittericon.png" alt="Twitter"></a>
+      <a href="#" id="social-icon"><img src="/images/facebookicon.png" alt="Facebook"></a>
+      <a href="#" id="social-icon"><img src="/images/instagramicon.png" alt="Instagram"></a>
     </div>
-    
-    <a href="/nuevaCategoria"><strong>Agregar una categoria </strong></a> <br>
+  </header>
+  <table>
+    <th colspan="3">Categorias</th>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Funciones</th>
+    </tr>
+  </thead>
+    <tr th:each="categoria: ${todaslascategorias}">
+      <td th:text="${categoria.id}"></td>
+      <td th:text="${categoria.nombre}"></td>
+
+      <td><a th:href="@{/borrarCategoria/{id}(id=${categoria.id})}">Borrar Categoria</a>
+        <br>
+        <a th:href="@{/editarCategoria/{id}(id=${categoria.id})}">Editar Categoria</a>
+      </td>
+
+    </tr>
+    <br>
+
+  </table>
+
+  <div class="boton-imagen">
+  <a th:href="@{/nuevaCategoria}">
+    <img src="/images/mas.png" alt="Icono de Nuevo Producto" />
+    Añadir Categoria
+  </a>
+</div>
 </body>
+
 </html>

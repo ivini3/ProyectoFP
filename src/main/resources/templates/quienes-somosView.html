@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/menu.css">
+    <title>Quienes Somos</title>
+    <link rel="stylesheet" href="/css/quienes-somos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -12,129 +12,110 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav
-      th:fragment="menu"
-      class="navbar navbar-expand-sm navbar-light bg-light"
-    >
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!-- menú común para el público -->
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                th:href="@{/public/}"
-              >
-                Inicio</a
-              >
-            </li>
+  <header>
+   <a th:href="@{/}"> <img src="/images/Logo.png" alt="Logo" id="logocabecera">
+    <span id="nombretiendaheader">Ivastock´s</span></a>
+    <div class="language-select-container">
+        <select id="language-select" class="language-select">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
 
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                th:href="@{/public/quienes-somos}"
-              >
-                Quienes somos</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                th:href="@{/public/contactanos}"
-              >
-                Contactanos</a
-              >
-            </li>
-            <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  th:href="@{/productos}"
-                >
-                  Productos</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  th:href="@{/categoria}"
-                >
-                  Categorias</a
-                >
-              </li>
-            <!-- menú de gestión de usuarios (solo administradores) -->
-            <li sec:authorize="hasRole('ADMIN')" class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                th:href="@{/usuarios}"
-                >Usuarios</a
-              >
-            </li>
-            <!-- menú: Registrarse (solo si no autenticado) -->
-      
-            <!-- menú: Iniciar sesión (solo si no autenticado) -->
-            <li sec:authorize="!isAuthenticated()">
-              <a class="nav-item nav-link active" th:href="@{/login}"
-                >Iniciar sesión</a
-              >
-            </li>
-            <!-- menú: nombre-usuario (solo si autenticado) -->
-            <li
-              class="nav-item ms-md-auto dropdown"
-              sec:authorize="isAuthenticated()"
-            >
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                id="dropdownMenuLink"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <span sec:authentication="name"></span
-              ></a>
-              <ul
-                class="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdown"
-              >
-                <li>
-                  <a class="dropdown-item" th:href="@{/user/edit/userLogued}"
-                    >Editar perfil</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" th:href="@{/user/edit/passLogued}"
-                    >Cambiar Contraseña</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" th:href="@{/logout}"
-                    >Cerrar sesión</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
+        </select>
+    </div>
+    <div id="social-icons">
+
+        <a href="#" id="social-icon"><img src="/images/twittericon.png" alt="Twitter"></a>
+        <a href="#" id="social-icon"><img src="/images/facebookicon.png" alt="Facebook"></a>
+        <a href="#" id="social-icon"><img src="/images/instagramicon.png" alt="Instagram"></a>
+    </div>
+</header>
+  <div class="bg-light">
+    <div class="container py-5">
+      <div class="row h-100 align-items-center py-5">
+        <div class="col-lg-6">
+          <h1 class="display-4">Sobre Nosotros</h1>
+          <p class="lead text-muted mb-0">Potencia tu pasión con la tecnología de mañana, hoy..</p>
+         </p>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block"><img src="https://bootstrapious.com/i/snippets/sn-about/illus.png" alt="" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bg-custom py-5">
+    <div class="container py-5">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+          <h2 class="font-weight-light">Ivastock's: Tu Aliado en Tecnología de Vanguardia</h2>
+          <p class="font-italic text-muted mb-4">En Ivastock's, nos apasiona la tecnología tanto como a ti. Desde nuestros inicios, nos hemos dedicado a proporcionar los últimos ordenadores y componentes de alta calidad para entusiastas y profesionales. Nos enorgullece ofrecer un servicio personalizado y asesoramiento experto para ayudarte a encontrar las soluciones tecnológicas perfectas para tus necesidades. Con una amplia gama de productos de las mejores marcas, Ivastock's es tu socio confiable para potenciar tu pasión por la tecnología.</p>
+        </div>
+        <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="/images/quienes1.png" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-5 px-5 mx-auto"><img src="/images/quienes2.png" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+        <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+          <h2 class="font-weight-light">Descubre la Innovación en Ivastock's</h2>
+          <p class="font-italic text-muted mb-4">En Ivastock's, nos especializamos en traer lo mejor de la tecnología a tu alcance. Nuestro compromiso es ofrecerte una selección de ordenadores y componentes de última generación, respaldados por un equipo de expertos dedicados a brindarte el mejor asesoramiento y soporte. Ya sea que estés construyendo tu PC ideal o actualizando tus dispositivos, en Ivastock's encontrarás productos de calidad y un servicio excepcional que te acompañarán en cada paso de tu viaje tecnológico. Ven y descubre cómo podemos ayudarte a transformar tu experiencia digital.</p> 
         </div>
       </div>
-    </nav>
-    <img src="/images/quienes-somos.jpg" alt="">
+    </div>
+  </div>
+  
+  <div class="bg-light py-5">
+    <div class="container py-5">
+      <div class="row mb-4">
+        <div class="col-lg-5">
+          <h2 class="display-4 font-weight-light">Nestro equipo</h2>
+          <p class="font-italic text-muted">En Ivastock's, contamos con un equipo de expertos apasionados por la tecnología, comprometidos en brindar soluciones innovadoras y personalizadas para cada uno de nuestros clientes.</p>
+        </div>
+      </div>
+  
+      <div class="row text-center">
+        <!-- Team item-->
+        <div class="col-xl-3 col-sm-6 mb-5">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="/images/yo.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+            <h5 class="mb-0">Ivan Cotelo</h5><span class="small text-uppercase text-muted">Fundador</span>
+            </div>
+        </div>
+        <!-- End-->
+  
+        <!-- Team item-->
+        <div class="col-xl-3 col-sm-6 mb-5">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="/images/yo.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+            <h5 class="mb-0">Ivan Cotelo</h5><span class="small text-uppercase text-muted">FrontEnd Developer</span>
+           
+          </div>
+        </div>
+        <!-- End-->
+  
+        <!-- Team item-->
+        <div class="col-xl-3 col-sm-6 mb-5">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="/images/yo.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+            <h5 class="mb-0">Ivan Cotelo</h5><span class="small text-uppercase text-muted">Backend Developer</span>
+            
+          </div>
+        </div>
+        <!-- End-->
+  
+        <!-- Team item-->
+        <div class="col-xl-3 col-sm-6 mb-5">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="/images/yo.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+            <h5 class="mb-0">Ivan Cotelo</h5><span class="small text-uppercase text-muted">Database Developer</span>
+
+          </div>
+        </div>
+        <!-- End-->
+  
+      </div>
+    </div>
+  </div>
+  
+  
+  <footer class="bg-light pb-5">
+    <div class="container text-center">
+      <p class="font-italic text-muted mb-0">&copy; Copyrights Company.com All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
